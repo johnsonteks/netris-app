@@ -4,7 +4,7 @@ import React from "react";
 const Separator = (props) => {
   return (
     <>
-      <View style={{ marginBottom: props.h }}></View>
+      <View style={{ marginBottom: props.h, width: props.w }}></View>
     </>
   );
 };

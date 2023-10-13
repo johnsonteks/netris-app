@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, Image } from "react-native";
+import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
 import React from "react";
 import Swiper from "react-native-swiper";
 import Svg, { G, Path } from "react-native-svg";
@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
   },
 });
 
-const SplashScreen = () => {
+const SplashScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <View
@@ -86,7 +86,13 @@ const SplashScreen = () => {
               source={require("../assets/slide1.png")}
             />
             <Separator h={15} />
-            <Text style={{ color: "#774494", fontWeight: "700", fontSize: 18 }}>
+            <Text
+              style={{
+                color: "#774494",
+                fontFamily: "Inter_700Bold",
+                fontSize: 18,
+              }}
+            >
               Easy to use
             </Text>
             <Separator h={10} />
@@ -94,9 +100,9 @@ const SplashScreen = () => {
               <Text
                 style={{
                   color: "#774494",
-                  fontWeight: "300",
                   fontSize: 14,
                   textAlign: "center",
+                  fontFamily: "Inter_400Regular",
                 }}
               >
                 if a tire problem occurs, open your smartphone and find the
@@ -111,7 +117,13 @@ const SplashScreen = () => {
               source={require("../assets/slide2.png")}
             />
             <Separator h={15} />
-            <Text style={{ color: "#774494", fontWeight: "700", fontSize: 18 }}>
+            <Text
+              style={{
+                color: "#774494",
+                fontFamily: "Inter_700Bold",
+                fontSize: 18,
+              }}
+            >
               Easy to use
             </Text>
             <Separator h={10} />
@@ -119,9 +131,9 @@ const SplashScreen = () => {
               <Text
                 style={{
                   color: "#774494",
-                  fontWeight: "300",
                   fontSize: 14,
                   textAlign: "center",
+                  fontFamily: "Inter_400Regular",
                 }}
               >
                 if a tire problem occurs, open your smartphone and find the
@@ -136,7 +148,13 @@ const SplashScreen = () => {
               source={require("../assets/slide3.png")}
             />
             <Separator h={15} />
-            <Text style={{ color: "#774494", fontWeight: "700", fontSize: 18 }}>
+            <Text
+              style={{
+                color: "#774494",
+                fontFamily: "Inter_700Bold",
+                fontSize: 18,
+              }}
+            >
               Easy to use
             </Text>
             <Separator h={10} />
@@ -144,9 +162,9 @@ const SplashScreen = () => {
               <Text
                 style={{
                   color: "#774494",
-                  fontWeight: "300",
                   fontSize: 14,
                   textAlign: "center",
+                  fontFamily: "Inter_400Regular",
                 }}
               >
                 if a tire problem occurs, open your smartphone and find the
@@ -164,18 +182,26 @@ const SplashScreen = () => {
           alignItems: "center",
         }}
       >
-        <View
-          style={{
-            width: "35%",
-            height: "40%",
-            backgroundColor: "#774494",
-            justifyContent: "center",
-            alignItems: "center",
-            borderRadius: 30,
+        <TouchableOpacity
+          onPress={() => {
+            navigation.navigate("Register");
           }}
         >
-          <Text style={{ color: "white" }}>get started</Text>
-        </View>
+          <View
+            style={{
+              width: 110,
+              height: "40%",
+              backgroundColor: "#774494",
+              justifyContent: "center",
+              alignItems: "center",
+              borderRadius: 30,
+            }}
+          >
+            <Text style={{ color: "white", fontFamily: "Inter_400Regular" }}>
+              get started
+            </Text>
+          </View>
+        </TouchableOpacity>
       </View>
     </View>
   );
