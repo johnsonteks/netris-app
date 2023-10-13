@@ -107,7 +107,7 @@ const styles = StyleSheet.create({
   },
 });
 
-const Home = () => {
+const Home = ({ navigation }) => {
   const [entries, setEntries] = useState([]);
   const carouselRef = useRef(null);
   const [currentLocation, setCurrentLocation] = useState(null);
@@ -283,7 +283,7 @@ const Home = () => {
               <Button
                 left={false}
                 text={"Cari tambal ban"}
-                op={() => navigation.navigate("Home")}
+                op={() => navigation.navigate("Nerby")}
                 full={true}
               />
             </View>
