@@ -141,18 +141,21 @@ const Home = ({ navigation }) => {
   const dataBerita = [
     {
       id: 0,
-      judul: "Hamil Tua",
-      subJudul: "Kabar hari ini mbah nafi tengah hamil tua",
+      judul: "Pentingnya performa ban untuk berkendara",
+      subJudul: "Performa buruk berbahaya",
+      img: "https://i.ibb.co/mS5z6YM/ban.jpg",
     },
     {
       id: 1,
-      judul: "Sangat Tampan",
-      subJudul: "Kabar hari ini saya sangatlah tampan",
+      judul: "Kriteria ban yang baik untuk kendaraanmu",
+      subJudul: "beberapa kriteria ban yang baik",
+      img: "https://s3.ap-southeast-1.amazonaws.com/moladin.assets/blog/wp-content/uploads/2019/10/20210943/pjimage-2020-07-20T210935.586.jpg",
     },
     {
       id: 2,
-      judul: "Iyan Mabuk",
-      subJudul: "Kabar hari ini iyan sedang mabuk",
+      judul: "Ban bocor berpotensi sobek?",
+      subJudul: "Bahaya ban bocor",
+      img: "https://www.wahanahonda.com/assets/upload/berita/BERITA_1612703202_f313da56f339b5fb48dda003e147fb92.jpg",
     },
   ];
 
@@ -200,16 +203,24 @@ const Home = ({ navigation }) => {
               }}
             >
               <Image
-                style={{ width: 50, height: 50 }}
-                source={require("../assets/pp.png")}
+                style={{ width: 50, height: 50, borderRadius:10 }}
+                source={{
+                  uri: item.img,
+                }}
               ></Image>
               <View style={{ paddingHorizontal: 10, maxWidth: "80%" }}>
-                <Text style={{ fontFamily: "Inter_700Bold", color: "#5A1781" }}>
+                <Text
+                  style={{
+                    fontFamily: "Inter_700Bold",
+                    color: "#5A1781",
+                    fontSize: 13,
+                  }}
+                >
                   {item.judul}
                 </Text>
-                <Text style={{ fontFamily: "Inter_400Regular", fontSize: 12 }}>
-                  {item.subJudul}
-                </Text>
+                {/* <Text style={{ fontFamily: "Inter_400Regular", fontSize: 12 }}>
+                  {item.img}
+                </Text> */}
               </View>
             </View>
             <View
@@ -290,7 +301,7 @@ const Home = ({ navigation }) => {
           </View>
         </View>
         <View style={{ flex: 1, paddingVertical: 20 }}>
-          <Separator h={30} />
+          <Separator h={10} />
           <View
             style={{
               flexDirection: "row",
